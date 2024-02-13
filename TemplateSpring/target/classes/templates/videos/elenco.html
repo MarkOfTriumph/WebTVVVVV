@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    
+    <title>Lista Video</title>
+    <meta th:replace="fragments/resources :: head">
+</head>
+<body class="bg-light">
+<div class="container">
+	<nav th:replace="fragments/navbar :: navbar('ordini')"></nav>	
+
+<h1> Ecco i nostri video </h1>
+
+
+<div class="alert alert-primary" role="alert" th:if="${elenco.size()==0}">
+		<h3 >Nessun video trovato</h3>
+	</div>
+
+
+			<table class="table table-success table-striped table-hover" th:if="${elenco.size()>0}">
+<thead>
+<tr>
+				<th>Titolo</th>
+				<!--
+				<th>Immagine</th>
+				-->
+				<th>Minutaggio</th>
+				<th>Categoria</th>
+</tr>
+</thead>
+
+			<tbody>
+				<tr th:each="o: ${elenco}">  
+					<td th:text="${o.titolo}"></td>
+					<td th:text="${o.minutaggioTotaleVideo}"></td>
+					<td th:text="${o.categoria}"></td>
+				</tr>
+			</tbody>
+
+
+
+</table>
+</div>
+
+<script th:replace="fragments/resources :: scripts"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>	
+	<title>Dettagli Video</title>
+	<meta th:replace="fragments/resources :: head">
+</head>
+<body>
+	<div class="container">
+		<nav th:replace="fragments/navbar :: navbar('video')"></nav>	
+		<div class="row">
+			<h1 th:text="${video.titolo}"></h1>
+			<hr>
+			<!-- in totale ho 12 "spazi" -->
+			<div class="col-8">
+			<!-- questo div occupa 8 spazi (2/3 dello schermo) -->
+				<dl>
+				<dt>Id</dt>
+				<dd th:text="${video.titolo}">
+				<dt>Categoria</dt>
+				<dd th:text="${video.minutaggioTotaleVideo}">
+				<dt>Prezzo</dt>
+				<dd th:text="${video.categoria}">
+				</dl>
+			</div>
+			
+			<!--
+			<div class="col-4" th:if="${prodotto.immagine!=null}">
+			 questo div occupa 4 spazi (1/3 dello schermo) 
+				<img th:if="${prodotto.immagine.contains('http')}" class="img-fluid" th:src="${prodotto.immagine}">
+				<img th:if="${!prodotto.immagine.contains('http')}" class="img-fluid" th:src="|/img/${prodotto.immagine}|">
+			</div>
+			-->
+			
+		</div>
+		
+		
+	</div>
+	<script th:replace="fragments/resources :: scripts"></script>
+</body>
+</html>
